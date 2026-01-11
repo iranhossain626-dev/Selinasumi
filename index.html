@@ -1,0 +1,540 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Cutrico Ltd | HVAC in Malta & Gozo</title>
+  <meta name="description" content="Supply, installation and maintenance of air conditioning, heating and ventilation systems in Malta & Gozo. Cutrico Ltd — founded 1984." />
+
+  <style>
+    :root{
+      --bg:#070b14;
+      --panel:rgba(255,255,255,.06);
+      --panel2:rgba(255,255,255,.09);
+      --border:rgba(255,255,255,.12);
+      --text:#eaf0ff;
+      --muted:#b8c2e8;
+      --accent:#7aa7ff;
+      --accent2:#7affd6;
+      --shadow:0 18px 60px rgba(0,0,0,.45);
+      --radius:20px;
+      --max:1160px;
+    }
+
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0;
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      color:var(--text);
+      background:
+        radial-gradient(900px 600px at 10% 0%, rgba(122,167,255,.22), transparent 55%),
+        radial-gradient(900px 600px at 95% 10%, rgba(122,255,214,.14), transparent 55%),
+        linear-gradient(180deg, #070b14 0%, #060816 100%);
+      line-height:1.55;
+      overflow-x:hidden;
+    }
+    a{color:inherit;text-decoration:none}
+    .container{max-width:var(--max);margin:0 auto;padding:22px}
+    .pill{
+      display:inline-flex; align-items:center; gap:8px;
+      padding:8px 12px; border:1px solid var(--border);
+      background:rgba(255,255,255,.04);
+      border-radius:999px; color:var(--muted);
+      font-weight:600; font-size:13px;
+    }
+    .dot{
+      width:8px;height:8px;border-radius:999px;
+      background:linear-gradient(135deg,var(--accent),var(--accent2));
+      box-shadow:0 0 0 4px rgba(122,167,255,.16);
+    }
+
+    /* Top bar */
+    header{
+      position:sticky; top:0; z-index:50;
+      backdrop-filter: blur(12px);
+      background: rgba(7,11,20,.62);
+      border-bottom:1px solid var(--border);
+    }
+    .topbar{
+      display:flex; align-items:center; justify-content:space-between;
+      gap:14px; padding:12px 22px;
+      max-width:var(--max); margin:0 auto;
+    }
+    .brand{
+      display:flex; align-items:center; gap:12px;
+      font-weight:850; letter-spacing:.2px;
+    }
+    .mark{
+      width:38px; height:38px; border-radius:14px;
+      background: linear-gradient(135deg, rgba(122,167,255,.95), rgba(122,255,214,.65));
+      box-shadow: var(--shadow);
+    }
+    nav{display:flex; gap:10px; flex-wrap:wrap; align-items:center; justify-content:flex-end}
+    nav a{
+      color:var(--muted);
+      font-weight:650;
+      padding:10px 10px;
+      border-radius:12px;
+    }
+    nav a:hover{background:rgba(255,255,255,.06); color:var(--text)}
+    .btn{
+      display:inline-flex; align-items:center; justify-content:center;
+      padding:11px 14px; border-radius:14px;
+      border:1px solid var(--border);
+      background:rgba(255,255,255,.06);
+      font-weight:750;
+      transition:.15s ease;
+      white-space:nowrap;
+    }
+    .btn:hover{transform:translateY(-1px)}
+    .btn.primary{
+      background:linear-gradient(135deg, rgba(122,167,255,.95), rgba(122,255,214,.65));
+      color:#061022; border:none;
+    }
+
+    /* Hero */
+    .hero{padding:34px 0 12px}
+    .heroGrid{
+      display:grid;
+      grid-template-columns: 1.15fr .85fr;
+      gap:16px;
+      align-items:stretch;
+    }
+    .card{
+      border:1px solid var(--border);
+      background: rgba(255,255,255,.06);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+    }
+    .heroMain{padding:26px}
+    h1{
+      margin:10px 0 10px;
+      font-size: clamp(30px, 4.2vw, 54px);
+      letter-spacing:-.6px;
+      line-height:1.06;
+    }
+    .lead{
+      margin:0;
+      color:var(--muted);
+      font-size:16px;
+      max-width:62ch;
+    }
+    .ctaRow{display:flex; gap:12px; flex-wrap:wrap; margin-top:18px}
+    .trustRow{
+      display:flex; gap:10px; flex-wrap:wrap;
+      margin-top:16px; color:var(--muted); font-weight:650; font-size:13px;
+    }
+    .heroSide{padding:16px; display:grid; gap:10px}
+    .mini{
+      padding:14px;
+      border-radius:16px;
+      border:1px solid var(--border);
+      background: rgba(255,255,255,.04);
+    }
+    .mini b{display:block; font-size:16px}
+    .mini small{color:var(--muted)}
+    .heroImage{
+      border-radius:18px;
+      height:170px;
+      border:1px solid var(--border);
+      background:
+        radial-gradient(600px 220px at 10% 10%, rgba(122,167,255,.25), transparent 60%),
+        radial-gradient(600px 220px at 90% 40%, rgba(122,255,214,.14), transparent 60%),
+        linear-gradient(180deg, rgba(255,255,255,.05), rgba(255,255,255,.02));
+      overflow:hidden;
+      display:flex; align-items:flex-end;
+      position:relative;
+    }
+    .heroImage::after{
+      content:"";
+      position:absolute; inset:0;
+      background-image:
+        linear-gradient(90deg, rgba(255,255,255,.06) 1px, transparent 1px),
+        linear-gradient(0deg, rgba(255,255,255,.06) 1px, transparent 1px);
+      background-size: 48px 48px;
+      opacity:.28;
+      pointer-events:none;
+    }
+    .heroImage span{
+      position:relative;
+      padding:14px 14px 12px;
+      color:var(--muted);
+      font-weight:700;
+      font-size:13px;
+    }
+
+    /* Sections */
+    section{padding:22px 0}
+    .sectionTitle{
+      margin:0 0 10px;
+      font-size:22px;
+      letter-spacing:-.2px;
+    }
+    .sectionSub{
+      margin:0 0 14px;
+      color:var(--muted);
+      max-width:70ch;
+    }
+    .grid3{display:grid; grid-template-columns: repeat(3, 1fr); gap:12px}
+    .grid2{display:grid; grid-template-columns: 1fr 1fr; gap:12px}
+    .tile{padding:18px}
+    .tile h3{margin:0 0 6px}
+    .tile p{margin:0; color:var(--muted)}
+    .kpiRow{display:grid; grid-template-columns: repeat(4, 1fr); gap:10px; margin-top:12px}
+    .kpi{
+      padding:14px;
+      border-radius:16px;
+      border:1px solid var(--border);
+      background: rgba(255,255,255,.04);
+    }
+    .kpi b{font-size:18px}
+    .kpi small{display:block; color:var(--muted); margin-top:2px}
+
+    /* Product cards */
+    .products{
+      display:grid; grid-template-columns: repeat(4, 1fr); gap:12px;
+    }
+    .pCard{padding:14px; display:grid; gap:10px}
+    .pImg{
+      height:128px; border-radius:16px; border:1px solid var(--border);
+      background: linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.03));
+      position:relative; overflow:hidden;
+    }
+    .pImg::after{
+      content:"";
+      position:absolute; inset:-40%;
+      background: radial-gradient(circle at 30% 30%, rgba(122,167,255,.25), transparent 60%);
+      transform: rotate(18deg);
+    }
+    .pCard .meta{display:flex; align-items:center; justify-content:space-between; gap:10px}
+    .tag{
+      display:inline-flex; align-items:center; justify-content:center;
+      padding:6px 10px;
+      border-radius:999px;
+      border:1px solid var(--border);
+      background: rgba(255,255,255,.04);
+      color:var(--muted);
+      font-weight:700; font-size:12px;
+      white-space:nowrap;
+    }
+
+    /* Footer */
+    footer{padding:26px 0 44px; color:var(--muted)}
+    .foot{
+      display:flex; align-items:flex-start; justify-content:space-between;
+      gap:14px; flex-wrap:wrap;
+      border-top:1px solid var(--border);
+      padding-top:18px;
+    }
+    .muted{color:var(--muted)}
+    .small{font-size:13px}
+
+    /* Responsive */
+    @media (max-width: 980px){
+      .heroGrid{grid-template-columns:1fr}
+      .products{grid-template-columns: repeat(2, 1fr)}
+      .grid3{grid-template-columns:1fr}
+      .grid2{grid-template-columns:1fr}
+      .kpiRow{grid-template-columns: repeat(2, 1fr)}
+      nav{display:none}
+      .menuHint{display:inline-flex}
+    }
+    @media (min-width: 981px){
+      .menuHint{display:none}
+    }
+  </style>
+</head>
+
+<body>
+<header>
+  <div class="topbar">
+    <a class="brand" href="#top">
+      <span class="mark" aria-hidden="true"></span>
+      <span>Cutrico Ltd</span>
+    </a>
+
+    <a class="btn menuHint" href="#contact">Get a Quote</a>
+
+    <nav aria-label="Primary">
+      <a href="#services">Services</a>
+      <a href="#shop">Shop</a>
+      <a href="#projects">Projects</a>
+      <a href="#about">About</a>
+      <a href="#contact">Contact</a>
+      <a class="btn primary" href="#contact">Request Quote</a>
+    </nav>
+  </div>
+</header>
+
+<main id="top" class="container">
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="heroGrid">
+      <div class="card heroMain">
+        <span class="pill"><span class="dot" aria-hidden="true"></span> HVAC specialists in Malta & Gozo</span>
+        <h1>Comfort engineered for homes, businesses & industry.</h1>
+        <p class="lead">
+          Cutrico Ltd supplies, installs and maintains air-conditioning, heating and ventilation systems —
+          with trusted brands, professional workmanship, and responsive after-sales support.
+        </p>
+
+        <div class="ctaRow">
+          <a class="btn primary" href="#contact">Request a Quote</a>
+          <a class="btn" href="#services">Explore Services</a>
+          <a class="btn" href="#shop">Browse Products</a>
+        </div>
+
+        <div class="trustRow">
+          <span>✔ Supply & Installation</span>
+          <span>✔ Maintenance & Servicing</span>
+          <span>✔ Residential • Commercial • Industrial</span>
+        </div>
+      </div>
+
+      <div class="card heroSide">
+        <div class="heroImage" role="img" aria-label="Showcase image placeholder">
+          <span>Replace this banner with a real project photo</span>
+        </div>
+
+        <div class="mini">
+          <b>Fast support</b>
+          <small>Maintenance plans & responsive servicing.</small>
+        </div>
+        <div class="mini">
+          <b>Trusted since 1984</b>
+          <small>Established local market leader.</small>
+        </div>
+        <div class="mini">
+          <b>Quality brands</b>
+          <small>Air conditioning • Heating • Ventilation • Marine.</small>
+        </div>
+      </div>
+    </div>
+
+    <div class="kpiRow">
+      <div class="kpi"><b>Air Conditioning</b><small>Sales, install & repair</small></div>
+      <div class="kpi"><b>Heating</b><small>Radiators & underfloor</small></div>
+      <div class="kpi"><b>Ventilation</b><small>Fresh air solutions</small></div>
+      <div class="kpi"><b>Marine</b><small>Onboard comfort systems</small></div>
+    </div>
+  </section>
+
+  <!-- SERVICES -->
+  <section id="services">
+    <h2 class="sectionTitle">Services</h2>
+    <p class="sectionSub">
+      Everything from selecting the right system to installation, commissioning, and ongoing maintenance —
+      tailored for your space and usage.
+    </p>
+
+    <div class="grid3">
+      <div class="card tile">
+        <h3>Air Conditioning</h3>
+        <p>Efficient systems for bedrooms, open-plan areas, offices, shops, and large premises.</p>
+      </div>
+      <div class="card tile">
+        <h3>Heating</h3>
+        <p>Underfloor heating and home heating solutions designed for comfort and control.</p>
+      </div>
+      <div class="card tile">
+        <h3>Ventilation</h3>
+        <p>Fresh-air and extraction systems to improve air quality and keep spaces compliant.</p>
+      </div>
+    </div>
+
+    <div style="height:12px"></div>
+
+    <div class="grid2">
+      <div class="card tile">
+        <h3>Maintenance & Servicing</h3>
+        <p>Protect your investment with planned maintenance, filter changes, cleaning and inspections.</p>
+      </div>
+      <div class="card tile">
+        <h3>Consultation & System Design</h3>
+        <p>We help you choose the right capacity, placement, and solution for long-term efficiency.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- SHOP -->
+  <section id="shop">
+    <h2 class="sectionTitle">Featured Products</h2>
+    <p class="sectionSub">
+      A quick highlight of popular items — link these to your existing shop categories (Air Conditioning, Heating, Ventilation, Marine).
+    </p>
+
+    <div class="products">
+      <div class="card pCard">
+        <div class="pImg"></div>
+        <div class="meta">
+          <div>
+            <b>Domestic Air Conditioner</b><br>
+            <span class="muted small">A+++ • R32 • Wi-Fi ready</span>
+          </div>
+          <span class="tag">Shop</span>
+        </div>
+        <a class="btn" href="#" onclick="alert('Link this to your product/category page'); return false;">View</a>
+      </div>
+
+      <div class="card pCard">
+        <div class="pImg"></div>
+        <div class="meta">
+          <div>
+            <b>Commercial Cassette</b><br>
+            <span class="muted small">Ceiling cassette solutions</span>
+          </div>
+          <span class="tag">Shop</span>
+        </div>
+        <a class="btn" href="#" onclick="alert('Link this to your product/category page'); return false;">View</a>
+      </div>
+
+      <div class="card pCard">
+        <div class="pImg"></div>
+        <div class="meta">
+          <div>
+            <b>Smart Underfloor Heating</b><br>
+            <span class="muted small">Comfort you can control</span>
+          </div>
+          <span class="tag">Shop</span>
+        </div>
+        <a class="btn" href="#" onclick="alert('Link this to your product/category page'); return false;">View</a>
+      </div>
+
+      <div class="card pCard">
+        <div class="pImg"></div>
+        <div class="meta">
+          <div>
+            <b>Ventilation & Air Quality</b><br>
+            <span class="muted small">Fresh air & extraction</span>
+          </div>
+          <span class="tag">Shop</span>
+        </div>
+        <a class="btn" href="#" onclick="alert('Link this to your product/category page'); return false;">View</a>
+      </div>
+    </div>
+
+    <div style="height:12px"></div>
+    <a class="btn primary" href="#" onclick="alert('Link this to ALL PRODUCTS / Shop'); return false;">Browse All Products</a>
+  </section>
+
+  <!-- PROJECTS -->
+  <section id="projects">
+    <h2 class="sectionTitle">Projects</h2>
+    <p class="sectionSub">
+      Showcase 6–12 installs (residential + commercial). Add one strong line each: location, system type, and outcome.
+    </p>
+
+    <div class="grid3">
+      <div class="card tile">
+        <h3>Commercial Fit-Out</h3>
+        <p>VRF / multi-split installation with zoning for comfort and efficiency.</p>
+      </div>
+      <div class="card tile">
+        <h3>Residential Upgrade</h3>
+        <p>Quiet, high-efficiency units with Wi-Fi control and neat trunking.</p>
+      </div>
+      <div class="card tile">
+        <h3>Ventilation System</h3>
+        <p>Improved airflow with balanced ventilation and effective extraction.</p>
+      </div>
+    </div>
+
+    <div style="height:12px"></div>
+    <a class="btn" href="#" onclick="alert('Link this to your Our Projects page'); return false;">View All Projects</a>
+  </section>
+
+  <!-- ABOUT -->
+  <section id="about">
+    <div class="grid2">
+      <div class="card tile">
+        <h2 class="sectionTitle">About Cutrico</h2>
+        <p class="muted">
+          Founded in 1984, Cutrico Ltd is a market leader in the supply, installation and maintenance of
+          heating, ventilation and air-conditioning equipment in Malta and Gozo.
+        </p>
+        <p class="muted">
+          Our focus is quality products, expert installation, and dependable after-sales service — so your system
+          performs well year after year.
+        </p>
+      </div>
+
+      <div class="card tile">
+        <h2 class="sectionTitle">Why choose us</h2>
+        <ul class="muted" style="margin:0; padding-left:18px">
+          <li>Experienced team for domestic & commercial projects</li>
+          <li>Support for repairs, maintenance and planned servicing</li>
+          <li>Quality brands & practical recommendations</li>
+          <li>Clear communication from quote to completion</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact">
+    <h2 class="sectionTitle">Contact</h2>
+    <p class="sectionSub">
+      Tell us what you need (property type, number of rooms/areas, and preferred timeline) and we’ll get back to you.
+    </p>
+
+    <div class="grid2">
+      <div class="card tile">
+        <h3>Cutrico Ltd</h3>
+        <p class="muted" style="margin-top:6px">
+          Shop: Cutrico Ltd, Mriehel By-pass, Mriehel, Malta<br>
+          Email: info@cutrico.com<br>
+          Tel: (+356) 2149 8658 / (+356) 2149 8693
+        </p>
+
+        <div style="height:10px"></div>
+        <div class="card" style="padding:14px; background:rgba(255,255,255,.04); box-shadow:none">
+          <b>Working hours</b><br>
+          <span class="muted small">Mon–Fri: 9:00–19:00 • Sat: 9:00–13:00 • Sun: Closed</span>
+        </div>
+
+        <div style="height:12px"></div>
+        <a class="btn primary" href="tel:+35621498658">Call now</a>
+        <a class="btn" href="mailto:info@cutrico.com">Email</a>
+      </div>
+
+      <div class="card">
+        <!-- Simple mailto form. For a real form, connect to Formspree / Netlify Forms / backend. -->
+        <form style="display:grid; gap:10px; padding:18px"
+              action="mailto:info@cutrico.com" method="post" enctype="text/plain">
+          <input name="name" placeholder="Your name" required
+                 style="padding:12px;border-radius:12px;border:1px solid var(--border);background:rgba(255,255,255,.04);color:var(--text)" />
+          <input name="phone" placeholder="Phone number"
+                 style="padding:12px;border-radius:12px;border:1px solid var(--border);background:rgba(255,255,255,.04);color:var(--text)" />
+          <input name="email" type="email" placeholder="Email" required
+                 style="padding:12px;border-radius:12px;border:1px solid var(--border);background:rgba(255,255,255,.04);color:var(--text)" />
+          <textarea name="message" placeholder="What do you need? (AC / Heating / Ventilation), location, property type, and timeline..."
+                    required
+                    style="padding:12px;border-radius:12px;border:1px solid var(--border);background:rgba(255,255,255,.04);color:var(--text);min-height:120px;resize:vertical"></textarea>
+          <button class="btn primary" type="submit">Send enquiry</button>
+          <small class="muted">Tip: we can upgrade this to a real contact form (no email app pop-up).</small>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="foot">
+      <div>
+        <b>Cutrico Ltd</b><br>
+        <span class="muted small">HVAC • Malta & Gozo</span>
+      </div>
+      <div class="small muted">
+        © <span id="y"></span> Cutrico Ltd. All rights reserved.
+      </div>
+    </div>
+  </footer>
+
+</main>
+
+<script>
+  document.getElementById("y").textContent = new Date().getFullYear();
+</script>
+</body>
+</html>
